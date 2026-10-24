@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sruthi Pukalendi | Platform Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --border-color: #334155;
+      --tag-bg: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #fff;
+    }
+
+    header .subtitle {
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .contact-info a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-info a:hover {
+      color: var(--accent);
+    }
+
+    /* Section Cards */
+    section {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+      margin-left: 0.5rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-category {
+      background: var(--tag-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .skill-category h3 {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      background: var(--accent-glow);
+      color: var(--accent);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    /* Job & Project Items */
+    .item {
+      margin-bottom: 1.75rem;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .item-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .item-company {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .item-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    ul.bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.bullets li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    ul.bullets li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Education & Certs */
+    .edu-cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .edu-cert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <header>
+      <h1>Sruthi Pukalendi</h1>[cite: 1]
+      <div class="subtitle">Platform Engineer</div>[cite: 1]
+      <div class="contact-info">
+        <span>📍 Bengaluru, Karnataka, India</span>[cite: 1]
+        <span>📞 +91 8248302253</span>[cite: 1]
+        <span>✉️ <a href="mailto:sruthipukalendi99@gmail.com">sruthipukalendi99@gmail.com</a></span>[cite: 1]
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section>
+      <h2>Professional Summary</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        Platform Engineer with 5+ years of experience designing, automating, and operating production-scale cloud infrastructure across AWS, Azure, and GCP[cite: 1]. Specialized in Terraform, Kubernetes, Docker, Python automation, and developer platform engineering[cite: 1]. Built AI-powered engineering tools and infrastructure automation solutions that improve deployment reliability, developer productivity, and platform availability[cite: 1].
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Cloud</h3>
+          <div class="tags">
+            <span class="tag">AWS</span>[cite: 1]
+            <span class="tag">Azure</span>[cite: 1]
+            <span class="tag">GCP</span>[cite: 1]
+            <span class="tag">SAP SCI Cloud</span>[cite: 1]
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Infrastructure</h3>
+          <div class="tags">
+            <span class="tag">Terraform</span>[cite: 1]
+            <span class="tag">Kubernetes</span>[cite: 1]
+            <span class="tag">Docker</span>[cite: 1]
+            <span class="tag">Helm</span>[cite: 1]
+            <span class="tag">ArgoCD</span>[cite: 1]
+            <span class="tag">Vault</span>[cite: 1]
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Programming & Data</h3>
+          <div class="tags">
+            <span class="tag">Python</span>[cite: 1]
+            <span class="tag">Go</span>[cite: 1]
+            <span class="tag">Bash</span>[cite: 1]
+            <span class="tag">SQL</span>[cite: 1]
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>AI & Automation</h3>
+          <div class="tags">
+            <span class="tag">Claude</span>[cite: 1]
+            <span class="tag">LangChain</span>[cite: 1]
+            <span class="tag">ChromaDB</span>[cite: 1]
+            <span class="tag">Streamlit</span>[cite: 1]
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Observability</h3>
+          <div class="tags">
+            <span class="tag">Prometheus</span>[cite: 1]
+            <span class="tag">Grafana</span>[cite: 1]
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>SAP Technologies</h3>
+          <div class="tags">
+            <span class="tag">SAP BTP</span>[cite: 1]
+            <span class="tag">SAP HANA Cloud</span>[cite: 1]
+            <span class="tag">SAP HANA DB</span>[cite: 1]
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section>
+      <h2>Experience</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Platform Engineer</span> | <span class="item-company">SAP Labs</span>[cite: 1]
+          </div>
+          <div class="item-date">Oct 2022 – Present</div>[cite: 1]
+        </div>
+        <ul class="bullets">
+          <li>Designed reusable Terraform modules to provision and manage production cloud infrastructure across AWS and Azure, reducing manual provisioning effort[cite: 1].</li>
+          <li>Automated end-to-end infrastructure provisioning workflows, ensuring consistent, repeatable, and production-ready cloud environments[cite: 1].</li>
+          <li>Managed production Kubernetes platforms by containerizing applications with Docker, performing rolling updates, workload scaling, RBAC management, and zero-downtime deployments[cite: 1].</li>
+          <li>Developed Python automation tools, including a DAG/Topological Sorting dependency-resolution engine, reducing deployment conflicts by 35%[cite: 1].</li>
+          <li>Configured HashiCorp Vault secret engines, dynamic secrets, and access policies to securely manage multi-cloud credentials[cite: 1].</li>
+          <li>Established SAP BTP Global Accounts, Subaccounts, entitlements, and foundational platform services for enterprise onboarding[cite: 1].</li>
+          <li>Served as Single Point of Contact (SPOC) for critical production deployments, leading a 10-member engineering team[cite: 1].</li>
+          <li>Managed production incidents using Prometheus and Grafana, contributing to 99.99% platform availability[cite: 1].</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Assistant System Engineer</span> | <span class="item-company">TCS</span>[cite: 1]
+          </div>
+          <div class="item-date">Oct 2020 – Sep 2022</div>[cite: 1]
+        </div>
+        <ul class="bullets">
+          <li>Developed backend services supporting enterprise voice-processing workflows using Python and SQL[cite: 1].</li>
+          <li>Collaborated on large-scale data preprocessing, schema mapping, and enterprise database migrations[cite: 1].</li>
+          <li>Optimized application performance, resolved production issues, and supported Agile software delivery[cite: 1].</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- AI Projects -->
+    <section>
+      <h2>AI-Driven Projects</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">AI-Powered Pull Request Review Assistant</div>[cite: 1]
+        </div>
+        <ul class="bullets">
+          <li>Developed a Python-based GitHub PR review assistant leveraging LLM APIs to automate semantic code reviews and change summarization[cite: 1].</li>
+          <li>Integrated with CI/CD workflows to provide contextual feedback and identify algorithmic inefficiencies before merge[cite: 1].</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Repository Knowledge Assistant (RAG)</div>[cite: 1]
+        </div>
+        <ul class="bullets">
+          <li>Built an end-to-end Retrieval-Augmented Generation (RAG) platform using Python, LangChain, ChromaDB, and Streamlit[cite: 1].</li>
+          <li>Developed ingestion pipelines to parse source code, generate embeddings, and query architecture using natural language[cite: 1].</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section>
+      <div class="edu-cert-grid">
+        <div>
+          <h2>Education</h2>
+          <strong style="color: #fff;">B.E. in Electronics & Communication</strong>[cite: 1]<br>
+          <span style="color: var(--text-muted); font-size: 0.9rem;">Saranathan College of Engineering</span><br>[cite: 1]
+          <span style="color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">CGPA: 8.3 / 10</span>[cite: 1]
+        </div>
+        <div>
+          <h2>Certifications</h2>
+          <ul class="bullets">
+            <li>SAP Certified Cloud Native Developer</li>[cite: 1]
+            <li>SAP Certified Scrum Practitioner</li>[cite: 1]
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
